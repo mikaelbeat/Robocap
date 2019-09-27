@@ -25,4 +25,9 @@ Add product to cart
 Begin checkout
     Cart.Proceed to checkout
     SignIn.Verify sign-in page loaded
+    
+Login to Amazon
+    [Arguments]    ${Email}    ${Password}
+    SignIn.Login with valid credentials    ${Email}    ${Password}
+    
      

@@ -2,13 +2,18 @@
 Library    SeleniumLibrary    
 
 
+*** Variables ***
+${TOPNAV_SEARCHFIELD}    id=twotabsearchtextbox
+${TOPNAV_SEARCH_BUTTON}    //input[@value='Go']    
+
+
 *** Keywords ***
 Search for product
     Enter search term
     Submit search
     
 Enter search term
-    Input Text    id=twotabsearchtextbox    Stravaganza 1
+    Input Text    ${TOPNAV_SEARCHFIELD}    ${SEARCH_TERM}
 
 Submit search
-    Click Button    //input[@value='Go']
+    Click Button    ${TOPNAV_SEARCH_BUTTON}

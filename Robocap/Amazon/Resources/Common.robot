@@ -7,7 +7,7 @@ Insert testing data
     Log    Adding testing data    
 
 Begin web test
-    Open Browser    about:blank    chrome
+    Open Browser    about:blank    ${BROWSER}
 
 End web test  
     Close Browser

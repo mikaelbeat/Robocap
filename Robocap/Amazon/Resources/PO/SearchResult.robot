@@ -2,9 +2,15 @@
 Library    SeleniumLibrary    
 
 
+*** Variables ***
+${SEARCH_RESULT_TEXT}    results for
+${SEARCH_RESULT_ITEM}    //span[contains(text(),'APOSIMZ, volume 1')]
+
+
 *** Keywords ***
 Verify seach completed
-    Wait Until Page Contains    results for "Stravaganza 1" 
+    Wait Until Page Contains    ${SEARCH_RESULT_TEXT}
     
 Click product link
-    Click Element    //span[contains(text(),'Stravaganza Volume 1 (Stravaganza, The Queen in th')] 
+    Click Element    ${SEARCH_RESULT_ITEM}
+    

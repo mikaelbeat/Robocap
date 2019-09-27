@@ -13,6 +13,11 @@ Suite Teardown    Remove testing data
 
 
 *** Variables ***
+${BROWSER}    chrome
+${START_URL}    http://www.amazon.com
+${SEARCH_TERM}    APOSIMZ, volume 1
+${LOGIN_EMAIL}    email
+${LOGIN_PASSWORD}    password
 
 
 *** Test Cases ***
@@ -23,3 +28,4 @@ User must sign in to check out
     AmazonUI.Select product from search result
     AmazonUI.Add product to cart
     AmazonUI.Begin checkout
+    AmazonUI.Login to Amazon    ${LOGIN_EMAIL}    ${LOGIN_PASSWORD}
