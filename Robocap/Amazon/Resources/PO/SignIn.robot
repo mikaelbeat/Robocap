@@ -4,8 +4,8 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${SIGNIN_HEADER}    Sign-In
-${EMAIL_FIELD}    xxxx
-${PASSWORD_FIELD}    xxxx
+${EMAIL_FIELD}    //input[@id='ap_email']
+${PASSWORD_FIELD}    //input[@id='ap_email']
 
 
 *** Keywords ***
@@ -13,15 +13,18 @@ Verify sign-in page loaded
     Page Should Contain    ${SIGNIN_HEADER}
     
 Login with valid credentials
-    [Arguments]    ${Email}    ${Password}
-    Fill email field
-    Fill password field
-    Click submit button
-    
+    [Arguments]    ${email}    ${password}
+    Fill email field    ${email}
+    Fill password field    ${password}
+    Click submit button    
+
 Fill email field
-        [Arguments]    ${Email}
+        [Arguments]    ${email}
+        Input Text    ${EMAIL_FIELD}    ${email}
         
 Fill password field
-        [Arguments]    ${Password}
+        [Arguments]    ${password}
+        Input Text    ${PASSWORD_FIELD}    ${password}
         
 Click submit button
+    Log    Clicked submit button    

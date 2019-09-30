@@ -27,7 +27,7 @@ Begin checkout
     SignIn.Verify sign-in page loaded
     
 Login to Amazon
-    [Arguments]    ${Email}    ${Password}
-    SignIn.Login with valid credentials    ${Email}    ${Password}
+    [Arguments]    ${email}    ${password}
+    SignIn.Login with valid credentials    ${email}    ${password}
     
      

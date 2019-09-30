@@ -15,13 +15,13 @@ Suite Teardown    Remove testing data
 *** Variables ***
 ${BROWSER}    chrome
 ${START_URL}    http://www.amazon.com
-${SEARCH_TERM}    APOSIMZ, volume 1
+${SEARCH_TERM}    Mortal Kombat 11 - PlayStation 4
 ${LOGIN_EMAIL}    email
 ${LOGIN_PASSWORD}    password
 
 
 *** Test Cases ***
-User must sign in to check out
+User must sign in to checkout
     [Documentation]    This is some basic information about the test
     [Tags]    Smoke
     AmazonUI.Search for products

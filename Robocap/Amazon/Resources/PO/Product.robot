@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${PRODUCT_BACK_TO_RESULTS_LINK}    Back to results
-${PRODUCT_ADD_TO_CART_BUTTON}    //input[@id='add-to-cart-button']    
+${PRODUCT_ADD_TO_CART_BUTTON}    //input[@id='add-to-cart-button-ubb']   
 
 
 *** Keywords ***
