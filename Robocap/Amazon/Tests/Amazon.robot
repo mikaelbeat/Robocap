@@ -1,4 +1,7 @@
-## robot -d Results Tests/Amazon.robot
+# robot -d Results Tests/Amazon.robot
+
+# Logfiles with timestamps
+# robot -d Results --timestampoutputs Tests/Amazon.robot
 
 *** Settings ***
 Documentation    This is some basic about the test suite
