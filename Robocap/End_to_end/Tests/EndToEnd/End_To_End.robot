@@ -1,6 +1,7 @@
 *** Settings ***
-Documentation  Talk about what this suite of tests does
+Documentation  This is my end to end suite
 Resource  ../../Resources/FrontOffice/FrontOfficeApp.robot
+Resource  ../../Resources/BackOffice/BackOfficeApp.robot
 Resource  ../../Resources/Common/CommonWeb.robot
 Test Setup  Begin Web Test
 Test Teardown  End Web Test
@@ -10,17 +11,11 @@ Test Teardown  End Web Test
 *** Variables ***
 ${BROWSER} =  chrome
 ${FRONT_OFFICE_URL} =  http://www.robotframeworktutorial.com/front-office
+${BACK_OFFICE_URL} =  http://www.robotframeworktutorial.com/back-office
 
 *** Test Cases ***
-Should be able to access "Team" page
+Should be able to access to both sites
     [Documentation]  This is test 1
     [Tags]  test1
     FrontOfficeApp.Go to Landing Page
-    FrontOfficeApp.Go to "Team" Page
-
-"Team" page should match requirements
-    [Documentation]  This is test 2
-    [Tags]  test2
-    FrontOfficeApp.Go to Landing Page
-    FrontOfficeApp.Go to "Team" Page
-    FrontOfficeApp.Validate "Team" Page
+    BackOfficeApp.Go to Landing Page

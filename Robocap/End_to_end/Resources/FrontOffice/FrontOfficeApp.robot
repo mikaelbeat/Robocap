@@ -1,5 +1,5 @@
 *** Settings ***
-Resource  ./PO/Landing.robot
+Resource  ./PO/FrontOffice.Landing.robot
 Resource  ./PO/TopNav.robot
 Resource  ./PO/Team.robot
 
@@ -8,8 +8,8 @@ Resource  ./PO/Team.robot
 
 *** Keywords ***
 Go to Landing Page
-    Landing.Navigate To
-    Landing.Verify Page Loaded
+    FrontOffice.Landing.Navigate To
+    FrontOffice.Landing.Verify Page Loaded
 
 Go to "Team" Page
     TopNav.Select "Team" Page
