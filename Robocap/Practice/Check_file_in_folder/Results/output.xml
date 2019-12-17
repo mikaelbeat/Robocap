@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.4 on win32)" generated="20191210 15:09:19.302" rpa="false">
-<suite id="s1" name="File checker" source="D:\git\github\Robocap\Robocap\Practice\Check_file_in_folder\File_checker.robot">
+<robot generator="Robot 3.1.1 (Python 3.7.4 on win32)" generated="20191217 12:28:03.948" rpa="false">
+<suite id="s1" name="File checker" source="D:\Git\github\robocap\Robocap\Practice\Check_file_in_folder\File_checker.robot">
 <test id="s1-t1" name="File check test">
 <kw name="Check is file present">
 <kw name="Log" library="BuiltIn">
@@ -8,16 +8,16 @@
 <arguments>
 <arg>${location}</arg>
 </arguments>
-<msg timestamp="20191210 15:09:19.329" level="INFO">D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\</msg>
-<status status="PASS" starttime="20191210 15:09:19.329" endtime="20191210 15:09:19.329"></status>
+<msg timestamp="20191217 12:28:03.978" level="INFO">D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\</msg>
+<status status="PASS" starttime="20191217 12:28:03.978" endtime="20191217 12:28:03.978"></status>
 </kw>
 <kw name="Wait Until Created" library="OperatingSystem">
 <doc>Waits until the given file or directory is created.</doc>
 <arguments>
 <arg>${location}/${file}</arg>
 </arguments>
-<msg timestamp="20191210 15:09:29.985" level="INFO" html="yes">'&lt;a href="file://D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt"&gt;D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt&lt;/a&gt;' was created.</msg>
-<status status="PASS" starttime="20191210 15:09:19.329" endtime="20191210 15:09:29.985"></status>
+<msg timestamp="20191217 12:28:25.789" level="INFO" html="yes">'&lt;a href="file://D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt"&gt;D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt&lt;/a&gt;' was created.</msg>
+<status status="PASS" starttime="20191217 12:28:03.978" endtime="20191217 12:28:25.789"></status>
 </kw>
 <kw name="File Should Exist" library="OperatingSystem">
 <doc>Fails unless the given ``path`` points to an existing file.</doc>
@@ -25,14 +25,14 @@
 <arg>${location}/${file}</arg>
 <arg>"No file ${file} in given location!"</arg>
 </arguments>
-<msg timestamp="20191210 15:09:29.985" level="INFO" html="yes">File '&lt;a href="file://D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt"&gt;D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt&lt;/a&gt;' exists.</msg>
-<status status="PASS" starttime="20191210 15:09:29.985" endtime="20191210 15:09:29.985"></status>
+<msg timestamp="20191217 12:28:25.789" level="INFO" html="yes">File '&lt;a href="file://D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt"&gt;D:\Git\github\Robocap\Robocap\Practice\Check_file_in_folder\Data\test.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20191217 12:28:25.789" endtime="20191217 12:28:25.789"></status>
 </kw>
-<status status="PASS" starttime="20191210 15:09:19.329" endtime="20191210 15:09:29.986"></status>
+<status status="PASS" starttime="20191217 12:28:03.977" endtime="20191217 12:28:25.790"></status>
 </kw>
-<status status="PASS" starttime="20191210 15:09:19.328" endtime="20191210 15:09:29.986" critical="yes"></status>
+<status status="PASS" starttime="20191217 12:28:03.977" endtime="20191217 12:28:25.790" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20191210 15:09:19.303" endtime="20191210 15:09:29.986"></status>
+<status status="PASS" starttime="20191217 12:28:03.949" endtime="20191217 12:28:25.790"></status>
 </suite>
 <statistics>
 <total>
