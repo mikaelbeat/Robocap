@@ -7,10 +7,11 @@ ${data_file}  menu.xml
 
 
 *** Test Cases ***
-Read XML file test
-  Parse
-
-*** Keywords ***
-Parse
-  ${parsed_file}  Parse Xml    ${data_folder}/${data_file}
-  Log    ${parsed_file}
+XML File training
+  ${root}  Parse Xml    ${data_folder}/${data_file}
+  Log    ${root.tag}
+  Should Be Equal    ${root.tag}    breakfast_menu
+  ${text}  Get Element Text  ${root}  Body
+  Log  ${text}
+  # ${edited_xml}  Set Elements Text  ${root}  Kissa  food[0]/description
+  # Save Xml    ${edited_xml}    ${data_folder}/Result.xml
