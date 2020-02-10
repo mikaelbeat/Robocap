@@ -1,6 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <demo>
-<script/>
-<script/>
+<script />
+<script />
 <id>123456</id>
 <heading>Reminder</heading>
 <body>Don't forget me this weekend!</body>
@@ -9,7 +10,7 @@
   <important_data>This is needed to be changed</important_data>
 </footer>
 <superios_data>
- <important_element data="Change this?"/>
+ <important_element data="!!!*CHANGED*!!!" />
 </superios_data>
-<test_tag info="This element tag is going to be changed!"/>
+<test_tag info="This element tag is going to be changed!" />
 </demo>
