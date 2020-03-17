@@ -1,393 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.4 on win32)" generated="20200210 21:46:16.059" rpa="false">
+<robot generator="Robot 3.1.1 (Python 3.7.4 on win32)" generated="20200317 15:23:39.969" rpa="false">
 <suite id="s1" name="XML Training" source="D:\Git\github\Robocap\Robocap\XML_Training\XML_Training.robot">
 <test id="s1-t1" name="XML File training">
-<kw name="How to set element text">
+<kw name="Veriry elements">
 <kw name="Parse Xml" library="XML">
 <doc>Parses the given XML file or string into an element structure.</doc>
 <arguments>
-<arg>${data_folder}/${data_file}</arg>
+<arg>${data_folder}/Random_XML.xml</arg>
 </arguments>
 <assign>
 <var>${root}</var>
 </assign>
-<msg timestamp="20200210 21:46:16.104" level="INFO">${root} = &lt;Element 'breakfast_menu' at 0x03B3F090&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.104" endtime="20200210 21:46:16.104"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${root.tag}</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.105" level="INFO">breakfast_menu</msg>
-<status status="PASS" starttime="20200210 21:46:16.104" endtime="20200210 21:46:16.105"></status>
+<msg timestamp="20200317 15:23:40.013" level="INFO">${root} = &lt;Element 'demo' at 0x0379C480&gt;</msg>
+<status status="PASS" starttime="20200317 15:23:40.013" endtime="20200317 15:23:40.013"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
 <arg>${root.tag}</arg>
-<arg>breakfast_menu</arg>
+<arg>demo</arg>
 </arguments>
-<status status="PASS" starttime="20200210 21:46:16.105" endtime="20200210 21:46:16.105"></status>
+<status status="PASS" starttime="20200317 15:23:40.014" endtime="20200317 15:23:40.014"></status>
 </kw>
-<kw name="Get Element Text" library="XML">
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<arguments>
-<arg>${root[0]}</arg>
-<arg>name</arg>
-</arguments>
-<assign>
-<var>${text}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.105" level="INFO">${text} = Belgian Waffles</msg>
-<status status="PASS" starttime="20200210 21:46:16.105" endtime="20200210 21:46:16.105"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${text}</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.106" level="INFO">Belgian Waffles</msg>
-<status status="PASS" starttime="20200210 21:46:16.106" endtime="20200210 21:46:16.106"></status>
-</kw>
-<kw name="Set Element Text" library="XML">
-<doc>Sets text and/or tail text of the specified element.</doc>
-<arguments>
-<arg>${root[0]}</arg>
-<arg>Cat Waffels</arg>
-<arg>xpath=name</arg>
-</arguments>
-<status status="PASS" starttime="20200210 21:46:16.106" endtime="20200210 21:46:16.106"></status>
-</kw>
-<kw name="Save Xml" library="XML">
-<doc>Saves the given element to the specified file.</doc>
+<kw name="Get Element" library="XML">
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
 <arguments>
 <arg>${root}</arg>
-<arg>${data_folder}/Result.xml</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.107" level="INFO" html="yes">XML saved to &lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result.xml&lt;/a&gt;.</msg>
-<status status="PASS" starttime="20200210 21:46:16.106" endtime="20200210 21:46:16.107"></status>
-</kw>
-<kw name="Get File" library="OperatingSystem">
-<doc>Returns the contents of a specified file.</doc>
-<arguments>
-<arg>${data_folder}/Result.xml</arg>
+<arg>id</arg>
 </arguments>
 <assign>
-<var>${result}</var>
+<var>${id}</var>
 </assign>
-<msg timestamp="20200210 21:46:16.108" level="INFO" html="yes">Getting file '&lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result.xml&lt;/a&gt;'.</msg>
-<msg timestamp="20200210 21:46:16.108" level="INFO">${result} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;breakfast_menu&gt;
-    &lt;food&gt;
-        &lt;name&gt;Cat Waffels&lt;/name&gt;
-        &lt;price&gt;$5.95&lt;/price&gt;
-        &lt;description&gt;Two of our famous Belgian Waffles with plenty of r...</msg>
-<status status="PASS" starttime="20200210 21:46:16.107" endtime="20200210 21:46:16.108"></status>
+<msg timestamp="20200317 15:23:40.014" level="INFO">${id} = &lt;Element 'id' at 0x0379C540&gt;</msg>
+<status status="PASS" starttime="20200317 15:23:40.014" endtime="20200317 15:23:40.014"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>${result}</arg>
+<arg>${id.text}</arg>
 </arguments>
-<msg timestamp="20200210 21:46:16.108" level="INFO">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;breakfast_menu&gt;
-    &lt;food&gt;
-        &lt;name&gt;Cat Waffels&lt;/name&gt;
-        &lt;price&gt;$5.95&lt;/price&gt;
-        &lt;description&gt;Two of our famous Belgian Waffles with plenty of real maple syrup&lt;/description&gt;
-        &lt;calories&gt;650&lt;/calories&gt;
-    &lt;/food&gt;
-    &lt;food&gt;
-        &lt;name&gt;Strawberry Belgian Waffles&lt;/name&gt;
-        &lt;price&gt;$7.95&lt;/price&gt;
-        &lt;description&gt;Light Belgian waffles covered with strawberries and whipped cream&lt;/description&gt;
-        &lt;calories&gt;900&lt;/calories&gt;
-    &lt;/food&gt;
-    &lt;food&gt;
-        &lt;name&gt;Very-Berry Belgian Waffles&lt;/name&gt;
-        &lt;price&gt;$8.95&lt;/price&gt;
-        &lt;description&gt;Light Belgian waffles covered with an assortment of fresh berries and whipped cream&lt;/description&gt;
-        &lt;calories&gt;900&lt;/calories&gt;
-    &lt;/food&gt;
-    &lt;food&gt;
-        &lt;name&gt;French Toast&lt;/name&gt;
-        &lt;price&gt;$4.50&lt;/price&gt;
-        &lt;description&gt;Thick slices made from our homemade sourdough bread&lt;/description&gt;
-        &lt;calories&gt;600&lt;/calories&gt;
-    &lt;/food&gt;
-    &lt;food&gt;
-        &lt;name&gt;Homestyle Breakfast&lt;/name&gt;
-        &lt;price&gt;$6.95&lt;/price&gt;
-        &lt;description&gt;Two eggs, bacon or sausage, toast, and our ever-popular hash browns&lt;/description&gt;
-        &lt;calories&gt;950&lt;/calories&gt;
-    &lt;/food&gt;
-    &lt;food&gt;
-        &lt;name&gt;Grilled Cheese Sandwich&lt;/name&gt;
-        &lt;price&gt;$2.95&lt;/price&gt;
-        &lt;description&gt;Yummy melted cheese on grilled sourdough slices&lt;/description&gt;
-        &lt;calories&gt;300&lt;/calories&gt;
-    &lt;/food&gt;
-&lt;/breakfast_menu&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.108" endtime="20200210 21:46:16.108"></status>
+<msg timestamp="20200317 15:23:40.014" level="INFO">123456</msg>
+<status status="PASS" starttime="20200317 15:23:40.014" endtime="20200317 15:23:40.014"></status>
 </kw>
-<status status="PASS" starttime="20200210 21:46:16.104" endtime="20200210 21:46:16.108"></status>
-</kw>
-<kw name="How to set element text - Another approach">
-<kw name="Parse Xml" library="XML">
-<doc>Parses the given XML file or string into an element structure.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${data_folder}/Random_XML.xml</arg>
+<arg>${id.text}</arg>
+<arg>123456</arg>
 </arguments>
-<assign>
-<var>${root}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.109" level="INFO">${root} = &lt;Element 'demo' at 0x03B47C30&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.109" endtime="20200210 21:46:16.109"></status>
+<status status="PASS" starttime="20200317 15:23:40.014" endtime="20200317 15:23:40.015"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${root.tag}</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.109" level="INFO">demo</msg>
-<status status="PASS" starttime="20200210 21:46:16.109" endtime="20200210 21:46:16.109"></status>
-</kw>
-<kw name="Get Element Text" library="XML">
-<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<kw name="Get Element" library="XML">
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
 <arguments>
 <arg>${root}</arg>
-<arg>xpath=footer/important_data</arg>
+<arg>body</arg>
 </arguments>
 <assign>
-<var>${text}</var>
+<var>${body}</var>
 </assign>
-<msg timestamp="20200210 21:46:16.110" level="INFO">${text} = This is needed to be changed</msg>
-<status status="PASS" starttime="20200210 21:46:16.109" endtime="20200210 21:46:16.110"></status>
+<msg timestamp="20200317 15:23:40.015" level="INFO">${body} = &lt;Element 'body' at 0x0379C5A0&gt;</msg>
+<status status="PASS" starttime="20200317 15:23:40.015" endtime="20200317 15:23:40.015"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Element Text Should Be" library="XML">
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
 <arguments>
-<arg>${text}</arg>
+<arg>${body}</arg>
+<arg>Don't forget me this weekend!</arg>
 </arguments>
-<msg timestamp="20200210 21:46:16.110" level="INFO">This is needed to be changed</msg>
-<status status="PASS" starttime="20200210 21:46:16.110" endtime="20200210 21:46:16.110"></status>
+<status status="PASS" starttime="20200317 15:23:40.015" endtime="20200317 15:23:40.015"></status>
 </kw>
-<kw name="Set Element Text" library="XML">
-<doc>Sets text and/or tail text of the specified element.</doc>
+<kw name="Element Attribute Should Be" library="XML">
+<doc>Verifies that the specified attribute is ``expected``.</doc>
 <arguments>
 <arg>${root}</arg>
-<arg>Changed!!!</arg>
-<arg>xpath=footer/important_data</arg>
+<arg>value</arg>
+<arg>1</arg>
+<arg>xpath=id</arg>
 </arguments>
-<status status="PASS" starttime="20200210 21:46:16.110" endtime="20200210 21:46:16.110"></status>
+<status status="PASS" starttime="20200317 15:23:40.015" endtime="20200317 15:23:40.015"></status>
 </kw>
-<kw name="Save Xml" library="XML">
-<doc>Saves the given element to the specified file.</doc>
-<arguments>
-<arg>${root}</arg>
-<arg>${data_folder}/Result2.xml</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.111" level="INFO" html="yes">XML saved to &lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result2.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result2.xml&lt;/a&gt;.</msg>
-<status status="PASS" starttime="20200210 21:46:16.110" endtime="20200210 21:46:16.111"></status>
-</kw>
-<kw name="Get File" library="OperatingSystem">
-<doc>Returns the contents of a specified file.</doc>
-<arguments>
-<arg>${data_folder}/Result2.xml</arg>
-</arguments>
-<assign>
-<var>${result}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.112" level="INFO" html="yes">Getting file '&lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result2.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result2.xml&lt;/a&gt;'.</msg>
-<msg timestamp="20200210 21:46:16.112" level="INFO">${result} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;demo&gt;
-&lt;script /&gt;
-&lt;script /&gt;
-&lt;id&gt;123456&lt;/id&gt;
-&lt;heading&gt;Reminder&lt;/heading&gt;
-&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
-&lt;footer&gt;
-  &lt;some_data&gt;This is just some rando...</msg>
-<status status="PASS" starttime="20200210 21:46:16.111" endtime="20200210 21:46:16.112"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${result}</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.112" level="INFO">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;demo&gt;
-&lt;script /&gt;
-&lt;script /&gt;
-&lt;id&gt;123456&lt;/id&gt;
-&lt;heading&gt;Reminder&lt;/heading&gt;
-&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
-&lt;footer&gt;
-  &lt;some_data&gt;This is just some random data&lt;/some_data&gt;
-  &lt;important_data&gt;Changed!!!&lt;/important_data&gt;
-&lt;/footer&gt;
-&lt;superios_data&gt;
- &lt;important_element data="Change this?" /&gt;
-&lt;/superios_data&gt;
-&lt;test_tag info="This element tag is going to be changed!" /&gt;
-&lt;/demo&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.112" endtime="20200210 21:46:16.112"></status>
-</kw>
-<status status="PASS" starttime="20200210 21:46:16.108" endtime="20200210 21:46:16.112"></status>
-</kw>
-<kw name="How to change element attribute">
-<kw name="Parse Xml" library="XML">
-<doc>Parses the given XML file or string into an element structure.</doc>
-<arguments>
-<arg>${data_folder}/Random_XML.xml</arg>
-</arguments>
-<assign>
-<var>${root}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.113" level="INFO">${root} = &lt;Element 'demo' at 0x03B47BA0&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.112" endtime="20200210 21:46:16.113"></status>
-</kw>
-<kw name="Get Element Attribute" library="XML">
-<doc>Returns the named attribute of the specified element.</doc>
+<kw name="Element Attribute Should Be" library="XML">
+<doc>Verifies that the specified attribute is ``expected``.</doc>
 <arguments>
 <arg>${root}</arg>
 <arg>data</arg>
+<arg>Change this?</arg>
 <arg>xpath=superios_data/important_element</arg>
 </arguments>
-<assign>
-<var>${value}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.113" level="INFO">${value} = Change this?</msg>
-<status status="PASS" starttime="20200210 21:46:16.113" endtime="20200210 21:46:16.113"></status>
+<status status="PASS" starttime="20200317 15:23:40.016" endtime="20200317 15:23:40.016"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${value}</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.114" level="INFO">Change this?</msg>
-<status status="PASS" starttime="20200210 21:46:16.113" endtime="20200210 21:46:16.114"></status>
-</kw>
-<kw name="Set Element Attribute" library="XML">
-<doc>Sets attribute ``name`` of the specified element to ``value``.</doc>
+<kw name="Element Attribute Should Be" library="XML">
+<doc>Verifies that the specified attribute is ``expected``.</doc>
 <arguments>
 <arg>${root}</arg>
-<arg>data</arg>
-<arg>!!!*CHANGED*!!!</arg>
-<arg>xpath=superios_data/important_element</arg>
-</arguments>
-<status status="PASS" starttime="20200210 21:46:16.114" endtime="20200210 21:46:16.114"></status>
-</kw>
-<kw name="Save Xml" library="XML">
-<doc>Saves the given element to the specified file.</doc>
-<arguments>
-<arg>${root}</arg>
-<arg>${data_folder}/Result3.xml</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.115" level="INFO" html="yes">XML saved to &lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result3.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result3.xml&lt;/a&gt;.</msg>
-<status status="PASS" starttime="20200210 21:46:16.114" endtime="20200210 21:46:16.115"></status>
-</kw>
-<kw name="Get File" library="OperatingSystem">
-<doc>Returns the contents of a specified file.</doc>
-<arguments>
-<arg>${data_folder}/Result3.xml</arg>
-</arguments>
-<assign>
-<var>${result}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.115" level="INFO" html="yes">Getting file '&lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result3.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result3.xml&lt;/a&gt;'.</msg>
-<msg timestamp="20200210 21:46:16.115" level="INFO">${result} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;demo&gt;
-&lt;script /&gt;
-&lt;script /&gt;
-&lt;id&gt;123456&lt;/id&gt;
-&lt;heading&gt;Reminder&lt;/heading&gt;
-&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
-&lt;footer&gt;
-  &lt;some_data&gt;This is just some rando...</msg>
-<status status="PASS" starttime="20200210 21:46:16.115" endtime="20200210 21:46:16.115"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${result}</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.116" level="INFO">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;demo&gt;
-&lt;script /&gt;
-&lt;script /&gt;
-&lt;id&gt;123456&lt;/id&gt;
-&lt;heading&gt;Reminder&lt;/heading&gt;
-&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
-&lt;footer&gt;
-  &lt;some_data&gt;This is just some random data&lt;/some_data&gt;
-  &lt;important_data&gt;This is needed to be changed&lt;/important_data&gt;
-&lt;/footer&gt;
-&lt;superios_data&gt;
- &lt;important_element data="!!!*CHANGED*!!!" /&gt;
-&lt;/superios_data&gt;
-&lt;test_tag info="This element tag is going to be changed!" /&gt;
-&lt;/demo&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.116" endtime="20200210 21:46:16.116"></status>
-</kw>
-<status status="PASS" starttime="20200210 21:46:16.112" endtime="20200210 21:46:16.116"></status>
-</kw>
-<kw name="How to change element tag">
-<kw name="Parse Xml" library="XML">
-<doc>Parses the given XML file or string into an element structure.</doc>
-<arguments>
-<arg>${data_folder}/Random_XML.xml</arg>
-</arguments>
-<assign>
-<var>${root}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.116" level="INFO">${root} = &lt;Element 'demo' at 0x039F7390&gt;</msg>
-<status status="PASS" starttime="20200210 21:46:16.116" endtime="20200210 21:46:16.116"></status>
-</kw>
-<kw name="Set Element Tag" library="XML">
-<doc>Sets the tag of the specified element.</doc>
-<arguments>
-<arg>${root}</arg>
-<arg>DEMO</arg>
+<arg>info</arg>
+<arg>This element tag is going to be changed!</arg>
 <arg>xpath=test_tag</arg>
 </arguments>
-<status status="PASS" starttime="20200210 21:46:16.117" endtime="20200210 21:46:16.117"></status>
+<status status="PASS" starttime="20200317 15:23:40.016" endtime="20200317 15:23:40.016"></status>
 </kw>
-<kw name="Save Xml" library="XML">
-<doc>Saves the given element to the specified file.</doc>
-<arguments>
-<arg>${root}</arg>
-<arg>${data_folder}/Result4.xml</arg>
-</arguments>
-<msg timestamp="20200210 21:46:16.118" level="INFO" html="yes">XML saved to &lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result4.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result4.xml&lt;/a&gt;.</msg>
-<status status="PASS" starttime="20200210 21:46:16.117" endtime="20200210 21:46:16.118"></status>
+<status status="PASS" starttime="20200317 15:23:40.013" endtime="20200317 15:23:40.016"></status>
 </kw>
-<kw name="Get File" library="OperatingSystem">
-<doc>Returns the contents of a specified file.</doc>
-<arguments>
-<arg>${data_folder}/Result4.xml</arg>
-</arguments>
-<assign>
-<var>${result}</var>
-</assign>
-<msg timestamp="20200210 21:46:16.118" level="INFO" html="yes">Getting file '&lt;a href="file://D:\Git\github\Robocap\Robocap\XML_Training\Data\Result4.xml"&gt;D:\Git\github\Robocap\Robocap\XML_Training\Data\Result4.xml&lt;/a&gt;'.</msg>
-<msg timestamp="20200210 21:46:16.118" level="INFO">${result} = &lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;demo&gt;
-&lt;script /&gt;
-&lt;script /&gt;
-&lt;id&gt;123456&lt;/id&gt;
-&lt;heading&gt;Reminder&lt;/heading&gt;
-&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
-&lt;footer&gt;
-  &lt;some_data&gt;This is just some rando...</msg>
-<status status="PASS" starttime="20200210 21:46:16.118" endtime="20200210 21:46:16.118"></status>
-</kw>
-<status status="PASS" starttime="20200210 21:46:16.116" endtime="20200210 21:46:16.118"></status>
-</kw>
-<status status="PASS" starttime="20200210 21:46:16.103" endtime="20200210 21:46:16.118" critical="yes"></status>
+<status status="PASS" starttime="20200317 15:23:40.012" endtime="20200317 15:23:40.016" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200210 21:46:16.060" endtime="20200210 21:46:16.119"></status>
+<status status="PASS" starttime="20200317 15:23:39.970" endtime="20200317 15:23:40.016"></status>
 </suite>
 <statistics>
 <total>

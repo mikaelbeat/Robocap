@@ -9,10 +9,11 @@ ${data_file}  menu.xml
 
 *** Test Cases ***
 XML File training
-  How to set element text
-  How to set element text - Another approach
-  How to change element attribute
-  How to change element tag
+  # How to set element text
+  # How to set element text - Another approach
+  # How to change element attribute
+  # How to change element tag
+  Veriry elements
 
 *** Keywords ***
 How to set element text
@@ -53,3 +54,35 @@ How to change element tag
   Set Element Tag  ${root}  DEMO  xpath=test_tag
   Save Xml  ${root}  ${data_folder}/Result4.xml
   ${result}  Get File  ${data_folder}/Result4.xml
+
+
+Veriry elements
+  ${root}  Parse Xml  ${data_folder}/Random_XML.xml
+  Should Be Equal  ${root.tag}  demo
+
+  ${id}  Get Element  ${root}  id
+  Log  ${id.text}
+  Should Be Equal  ${id.text}  123456
+
+  ${body}  Get Element  ${root}  body
+  Element Text Should Be  ${body}  Don't forget me this weekend!
+
+  Element Attribute Should Be  ${root}  value  1  xpath=id
+  Element Attribute Should Be  ${root}  data  Change this?  xpath=superios_data/important_element
+  Element Attribute Should Be  ${root}  info  This element tag is going to be changed!  xpath=test_tag
+
+
+# <demo>
+#   <script/>
+#   <id value="1">123456</id>
+#   <heading>Reminder</heading>
+#     <body>Don't forget me this weekend!</body>
+#     <footer>
+#       <some_data>This is just some random data</some_data>
+#       <important_data>This is needed to be changed</important_data>
+#     </footer>
+#   <superios_data>
+#     <important_element data="Change this?"/>
+#   </superios_data>
+#     <test_tag info="This element tag is going to be changed!"/>
+# </demo>
