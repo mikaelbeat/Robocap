@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <demo>
-<script />
-<script />
-<id>123456</id>
-<heading>Reminder</heading>
-<body>Don't forget me this weekend!</body>
-<footer>
-  <some_data>This is just some random data</some_data>
-  <important_data>Changed!!!</important_data>
-</footer>
-<superios_data>
- <important_element data="Change this?" />
-</superios_data>
-<test_tag info="This element tag is going to be changed!" />
+  <script />
+  <id value="1">123456</id>
+  <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+    <footer>
+      <some_data>This is just some random data</some_data>
+      <important_data>Changed!!!</important_data>
+    </footer>
+  <superios_data>
+    <important_element data="Change this?" />
+  </superios_data>
+    <test_tag info="This element tag is going to be changed!" />
 </demo>

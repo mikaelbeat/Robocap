@@ -9,10 +9,10 @@ ${data_file}  menu.xml
 
 *** Test Cases ***
 XML File training
-  # How to set element text
-  # How to set element text - Another approach
-  # How to change element attribute
-  # How to change element tag
+  How to set element text
+  How to set element text - Another approach
+  How to change element attribute
+  How to change element tag
   Veriry elements
 
 *** Keywords ***
