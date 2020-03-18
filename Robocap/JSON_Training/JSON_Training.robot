@@ -4,6 +4,7 @@ Library  OperatingSystem
 Library  Collections
 Library  RequestsLibrary
 
+
 *** Variables ***
 ${data_folder} =  Data/
 ${data_file}  Data.json
@@ -14,7 +15,6 @@ ${base_url}  https://restcountries.eu/
 JSON File training
   Verify fields in JSON file
   Verify fields in JSON response
-
 
 
 *** Keywords ***
@@ -55,6 +55,6 @@ Verify fields in JSON response
   Should Be Equal  ${border[0]}  NOR
 
   # Multiple data validation in JSON array
-   ${border}  Get Value From Json  ${response_json}  $.borders
-   Log  ${border[0]}
-   Should Contain Any  ${border[0]}  NOR  SWE  RUS
+  ${border}  Get Value From Json  ${response_json}  $.borders
+  Log  ${border[0]}
+  Should Contain Any  ${border[0]}  NOR  SWE  RUS
